@@ -1,0 +1,50 @@
+﻿<Window x:Class="ItemControl.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ItemControl"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+	<Grid>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="Auto"/>
+			<ColumnDefinition Width="*"/>
+		</Grid.ColumnDefinitions>
+	<Grid.RowDefinitions>
+		<RowDefinition Height="Auto"/>
+		<RowDefinition Height="*"/>
+	</Grid.RowDefinitions>
+	<Grid 
+		Margin="10" 
+		Grid.Row="0"
+		Grid.Column="0">
+		<ItemsControl>
+			<system:String>ItemsControl Item #1</system:String>
+			<system:String>ItemsControl Item #2</system:String>
+			<system:String>ItemsControl Item #3</system:String>
+			<system:String>ItemsControl Item #4</system:String>
+			<system:String>ItemsControl Item #5</system:String>
+		</ItemsControl>
+	</Grid>
+		<Grid
+			Grid.Row="1"
+			Grid.Column="0">
+			<ItemsControl Name="TodoList">
+				<ItemsControl.ItemTemplate>
+					<DataTemplate>
+						<Grid Margin="5">
+							<Grid.ColumnDefinitions>
+								<ColumnDefinition Width="*" />
+								<ColumnDefinition Width="100" />
+							</Grid.ColumnDefinitions>
+							<TextBlock Text="{Binding Title}"/>
+							<ProgressBar Grid.Column="1" Minimum="0" Maximum="100" Value="{Binding Completion}"/>
+						</Grid>
+					</DataTemplate>
+				</ItemsControl.ItemTemplate>
+			</ItemsControl>
+		</Grid>
+	</Grid>
+</Window>
