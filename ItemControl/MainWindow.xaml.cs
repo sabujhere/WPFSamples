@@ -29,6 +29,7 @@ namespace ItemControl
 			items.Add(new TodoItem() { Title = "Wash the car", Completion = 0 });
 
 			TodoList.ItemsSource = items;
+			WrapTodoList.ItemsSource = items;
 		}
 	}
 	public class TodoItem

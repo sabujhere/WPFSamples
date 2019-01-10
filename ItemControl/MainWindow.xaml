@@ -28,10 +28,10 @@
 			<system:String>ItemsControl Item #5</system:String>
 		</ItemsControl>
 	</Grid>
-		<Grid
-			Grid.Row="1"
-			Grid.Column="0">
-			<ItemsControl Name="TodoList">
+		<ItemsControl 	
+				Grid.Row="1"
+		  	Grid.Column="0"
+		   	Name="TodoList">
 				<ItemsControl.ItemTemplate>
 					<DataTemplate>
 						<Grid Margin="5">
@@ -45,6 +45,20 @@
 					</DataTemplate>
 				</ItemsControl.ItemTemplate>
 			</ItemsControl>
-		</Grid>
+		<ItemsControl Margin="5"	
+			Grid.Row="0"
+			Grid.Column="1"
+			Name="WrapTodoList">
+			<ItemsControl.ItemsPanel>
+				<ItemsPanelTemplate>
+					<StackPanel />
+				</ItemsPanelTemplate>
+			</ItemsControl.ItemsPanel>
+			<ItemsControl.ItemTemplate>
+				<DataTemplate>
+					<TextBlock Text="{Binding Title}"/>
+				</DataTemplate>
+			</ItemsControl.ItemTemplate>
+		</ItemsControl>
 	</Grid>
 </Window>
